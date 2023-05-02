@@ -1,0 +1,59 @@
+create a enum day with the enumeration constants as days of week, create a class check with one constructor which will take objectvas an argument declare a data 
+member d of type enum, function void print() which uses the switch case to print the day selected otherwise it will print "Not a day of the week". Create a main 
+method class to take string input from the user as the day of the week pass this string as an argument to the constructor and call the print function to print the 
+appropriate day entered by the user.
+
+import java.util.Scanner;
+
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+class Check {
+    Day d;
+
+    public Check(Day d) {
+        this.d = d;
+    }
+
+    public void print() {
+        switch (d) {
+            case MONDAY:
+                System.out.println("Monday");
+                break;
+            case TUESDAY:
+                System.out.println("Tuesday");
+                break;
+            case WEDNESDAY:
+                System.out.println("Wednesday");
+                break;
+            case THURSDAY:
+                System.out.println("Thursday");
+                break;
+            case FRIDAY:
+                System.out.println("Friday");
+                break;
+            case SATURDAY:
+                System.out.println("Saturday");
+                break;
+            case SUNDAY:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Not a day of the week");
+                break;
+        }
+    }
+}
+
+public class Enum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the day of the week: ");
+        String input = sc.nextLine();
+
+        Day d = Day.valueOf(input.toUpperCase());
+        Check c = new Check(d);
+        c.print();
+    }
+}

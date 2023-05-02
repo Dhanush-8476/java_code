@@ -1,0 +1,16 @@
+wap to create a generic class with two data numbers and a function that will print the sum two numbers
+
+public class GenericAdder<T extends Number, U extends Number> {
+    private T a;
+    private U b;
+
+    public GenericAdder(T a, U b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public void printSum() {
+        double sum = a.doubleValue() + b.doubleValue();
+        System.out.println("Sum: " + sum);
+    }
+}
